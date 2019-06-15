@@ -3,7 +3,7 @@ from chatterbot.trainers import ChatterBotCorpusTrainer
 from django.views.generic.base import TemplateView
 from django.views.generic import View
 from django.http import JsonResponse
-from chatterbot.ext.django_chatterbot import settings
+#from chatterbot.ext.django_chatterbot import settings
 
 from chatterbot import ChatBot
 from chatterbot.response_selection import get_most_frequent_response
