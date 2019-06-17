@@ -2,8 +2,7 @@
 ChatterBot Django Example
 =========================
 
-This is an example Django app that shows how to create a simple chat bot web
-app using Django_ and ChatterBot_.
+This is a chatbot that has been developed for the lenest website using Django_ and ChatterBot_.
 
 Documentation
 -------------
