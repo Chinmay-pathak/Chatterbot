@@ -40,6 +40,10 @@ class ChatterBotApiView(View):
 
     trainer = ListTrainer(chatterbot)
     trainer.train(conv)
+    conv1 = open('general_questions.txt', 'r').readlines()
+
+    trainer2 = ListTrainer(chatterbot)
+    trainer2.train(conv1)
     trainer1 = ChatterBotCorpusTrainer(chatterbot)
     trainer1.train('chatterbot.corpus.english.greetings')
 
