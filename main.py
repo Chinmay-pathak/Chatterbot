@@ -4,6 +4,9 @@ from django.views.generic.base import TemplateView
 from django.views.generic import View
 from django.http import JsonResponse
 #from chatterbot.ext.django_chatterbot import settings
+from nltk.corpus import stopwords
+
+from nltk.corpus import stopwords
 
 from chatterbot import ChatBot
 from chatterbot.response_selection import get_most_frequent_response
@@ -11,21 +14,26 @@ from chatterbot.response_selection import get_most_frequent_response
 from chatterbot import utils
 from chatterbot.response_selection import get_first_response
 from chatterbot.comparisons import SynsetDistance
+from chatterbot.comparisons import SentimentComparison
 
 bot = ChatBot('Lenest',logic_adapters=[
                {
             "import_path": "chatterbot.logic.BestMatch",
-            "statement_comparison_function": "chatterbot.comparisons.SynsetDistance",
+            "statement_comparison_function": "chatterbot.comparisons.SentimentComparison",
             "default_response": "I am sorry, but I do not understand.Please enter your question again or email us at - for further queries",
             "response_selection_method":get_first_response,
-            "maximum_similarity_threshold": 0.65  }]
+            "maximum_similarity_threshold": 0.55  }]
             ,response_selection_method=get_first_response
             )
 
 
+stop_words = set(stopwords.words('english'))
+new_stopwords = ['pregnancy', 'during']
+new_stopwords_list = stop_words.union(new_stopwords)
 
 
-
+#c.update('pregnancy')
+#c.update('during')
 
 
 #bot = ChatBot('Lenest',logic_adapters=[
