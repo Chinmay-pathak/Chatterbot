@@ -34,7 +34,7 @@ class ChatterBotApiView(View):
                {
             "import_path": "chatterbot.logic.BestMatch",
             "statement_comparison_function": "chatterbot.comparisons.SentimentComparison",
-            "default_response": "I am sorry, but I do not understand.Please enter your question again or email us at - for further queries",
+            "default_response": "I am sorry, but I do not understand.Please enter your question again or email us at help@lenest.in for further queries",
             "response_selection_method":get_first_response,
             "maximum_similarity_threshold": 0.55  }]
             )
