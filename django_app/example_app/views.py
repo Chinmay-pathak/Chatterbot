@@ -10,6 +10,7 @@ from chatterbot.trainers import ChatterBotCorpusTrainer
 from django.views.generic.base import TemplateView
 from django.views.generic import View
 from django.http import JsonResponse
+from nltk.corpus import stopwords
 from chatterbot.ext.django_chatterbot import settings
 
 from chatterbot import ChatBot
@@ -38,7 +39,7 @@ class ChatterBotApiView(View):
             "maximum_similarity_threshold": 0.55  }]
             )
     stop_words = set(stopwords.words('english'))
-    new_stopwords = ['pregnancy', 'during']
+    new_stopwords = ['pregnancy', 'during','?']
     new_stopwords_list = stop_words.union(new_stopwords)
 
 
